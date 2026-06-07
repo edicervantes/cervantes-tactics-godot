@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="UnitStats" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/unit_stats.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/portraits/family/diego-avatar.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/standees/family/diego-standee.png" id="3"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Diego"
+role = "Mage"
+max_hp = 7
+move = 3
+attack = 4
+attack_range = 2
+magic_aoe_radius = 1
+heal = 0
+hint = "fuego rojo"
+unit_color = Color(0.886275, 0.321569, 0.247059, 1)
+portrait_texture = ExtResource("2")
+standee_texture = ExtResource("3")
+standee_scale = 0.2

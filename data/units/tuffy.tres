@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="UnitStats" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/unit_stats.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/portraits/family/tuffy-avatar.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Tuffy"
+role = "Guide"
+max_hp = 1
+move = 2
+attack = 0
+attack_range = 0
+is_noncombatant = true
+blocks_movement = false
+spiritual_aura_radius = 1
+spiritual_aura_heal = 1
+hint = "guia espiritual"
+unit_color = Color(0.760784, 0.580392, 0.34902, 1)
+portrait_texture = ExtResource("2")

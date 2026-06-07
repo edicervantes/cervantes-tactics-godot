@@ -1,0 +1,659 @@
+[gd_scene load_steps=8 format=3 uid="uid://cervantes_battle_ui"]
+
+[ext_resource type="Script" path="res://scripts/battle_ui.gd" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dark_panel"]
+bg_color = Color(0.025, 0.03, 0.038, 0.56)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9, 0.7, 0.36, 0.42)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+content_margin_left = 14.0
+content_margin_top = 10.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+shadow_color = Color(0, 0, 0, 0.28)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_intro_panel"]
+bg_color = Color(0.025, 0.03, 0.038, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.93, 0.73, 0.39, 0.5)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+content_margin_left = 30.0
+content_margin_top = 20.0
+content_margin_right = 30.0
+content_margin_bottom = 20.0
+shadow_color = Color(0, 0, 0, 0.32)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_normal"]
+bg_color = Color(0.08, 0.1, 0.115, 0.64)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.86, 0.68, 0.36, 0.5)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_hover"]
+bg_color = Color(0.14, 0.17, 0.18, 0.78)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.95, 0.76, 0.38, 0.78)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_pressed"]
+bg_color = Color(0.055, 0.07, 0.08, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.55, 0.41, 0.21, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_disabled"]
+bg_color = Color(0.12, 0.12, 0.12, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.28, 0.25, 0.2, 0.65)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="BattleUI" type="CanvasLayer"]
+script = ExtResource("1")
+
+[node name="ResultBackdrop" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+color = Color(0, 0, 0, 0.78)
+
+[node name="PauseBackdrop" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+color = Color(0, 0, 0, 0.52)
+
+[node name="PausePanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_left = 0.34
+anchor_top = 0.29
+anchor_right = 0.66
+anchor_bottom = 0.68
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_intro_panel")
+
+[node name="PauseVBox" type="VBoxContainer" parent="PausePanel"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="PauseTitle" type="Label" parent="PausePanel/PauseVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.78, 0.42, 1)
+theme_override_font_sizes/font_size = 28
+text = "Pausa"
+horizontal_alignment = 1
+
+[node name="PauseHint" type="Label" parent="PausePanel/PauseVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.82, 0.7, 1)
+theme_override_font_sizes/font_size = 16
+text = "La batalla queda detenida."
+horizontal_alignment = 1
+
+[node name="PauseResumeButton" type="Button" parent="PausePanel/PauseVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 46)
+theme_override_colors/font_color = Color(0.98, 0.86, 0.58, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_button_disabled")
+text = "Continuar"
+
+[node name="PauseOptionsButton" type="Button" parent="PausePanel/PauseVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 46)
+theme_override_colors/font_color = Color(0.98, 0.86, 0.58, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_button_disabled")
+text = "Opciones"
+
+[node name="PauseMainMenuButton" type="Button" parent="PausePanel/PauseVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 46)
+theme_override_colors/font_color = Color(0.98, 0.86, 0.58, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_button_disabled")
+text = "Volver al menu principal"
+
+[node name="TopBar" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+offset_left = 34.0
+offset_top = 20.0
+offset_right = 640.0
+offset_bottom = 94.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dark_panel")
+
+[node name="TopVBox" type="VBoxContainer" parent="TopBar"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="ChapterLabel" type="Label" parent="TopBar/TopVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.77, 0.42, 1)
+theme_override_font_sizes/font_size = 15
+text = "Capitulo I: La Puerta De La Sierra"
+
+[node name="ObjectiveLabel" type="Label" parent="TopBar/TopVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+autowrap_mode = 3
+text = "Objetivo: Protege el cristal  |  Cristal 4/4  |  Enemigos 3"
+
+[node name="ConditionsLabel" type="Label" parent="TopBar/TopVBox"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+autowrap_mode = 3
+text = "Victoria: derrota a todos los enemigos.  /  Derrota: el cristal se rompe o cae toda la familia."
+
+[node name="TopText" type="Label" parent="TopBar/TopVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.86, 0.74, 1)
+theme_override_font_sizes/font_size = 15
+autowrap_mode = 3
+text = "Selecciona una unidad familiar y protege el cristal."
+
+[node name="EndTurnButton" type="Button" parent="."]
+unique_name_in_owner = true
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -228.0
+offset_top = 116.0
+offset_right = -18.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0.98, 0.86, 0.58, 1)
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_button_disabled")
+text = "Terminar turno"
+
+[node name="GuidePanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+offset_left = 244.0
+offset_top = 98.0
+offset_right = -292.0
+offset_bottom = 174.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dark_panel")
+
+[node name="GuideVBox" type="VBoxContainer" parent="GuidePanel"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="GuideTitle" type="Label" parent="GuidePanel/GuideVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.77, 0.42, 1)
+theme_override_font_sizes/font_size = 16
+text = "Guia familiar"
+
+[node name="GuideText" type="Label" parent="GuidePanel/GuideVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.88, 0.78, 1)
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
+text = "Selecciona una unidad familiar."
+
+[node name="ChapterIntroPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -170.0
+offset_right = 460.0
+offset_bottom = 170.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_intro_panel")
+
+[node name="IntroVBox" type="VBoxContainer" parent="ChapterIntroPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="IntroChapterLabel" type="Label" parent="ChapterIntroPanel/IntroVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.78, 0.42, 1)
+theme_override_font_sizes/font_size = 22
+text = "Capitulo I: La Puerta De La Sierra"
+horizontal_alignment = 1
+
+[node name="IntroObjectiveLabel" type="Label" parent="ChapterIntroPanel/IntroVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+autowrap_mode = 3
+text = "Protege el cristal familiar hasta derrotar a la Orden Sin Memoria."
+horizontal_alignment = 1
+
+[node name="IntroConditionsLabel" type="Label" parent="ChapterIntroPanel/IntroVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.82, 0.7, 1)
+theme_override_font_sizes/font_size = 15
+autowrap_mode = 3
+text = "Victoria: derrota a todos los enemigos.\nDerrota: el cristal se rompe o cae toda la familia."
+horizontal_alignment = 1
+
+[node name="IntroButton" type="Button" parent="ChapterIntroPanel/IntroVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 46)
+theme_override_colors/font_color = Color(0.98, 0.86, 0.58, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_button_disabled")
+text = "Comenzar"
+
+[node name="PartyPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_top = 156.0
+offset_right = -22.0
+offset_bottom = 396.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dark_panel")
+
+[node name="PartyVBox" type="VBoxContainer" parent="PartyPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PartyTitle" type="Label" parent="PartyPanel/PartyVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.77, 0.42, 1)
+theme_override_font_sizes/font_size = 19
+text = "Familia"
+horizontal_alignment = 1
+
+[node name="ActionPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_top = 0.18
+anchor_bottom = 0.52
+offset_left = 18.0
+offset_top = 0.0
+offset_right = 210.0
+offset_bottom = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dark_panel")
+
+[node name="ActionVBox" type="VBoxContainer" parent="ActionPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ActionTitle" type="Label" parent="ActionPanel/ActionVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.77, 0.42, 1)
+theme_override_font_sizes/font_size = 18
+text = "Acciones"
+horizontal_alignment = 1
+
+[node name="MoveButton" type="Button" parent="ActionPanel/ActionVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 42)
+theme_override_colors/font_color = Color(0.98, 0.86, 0.58, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_button_disabled")
+text = "Mover"
+
+[node name="AttackButton" type="Button" parent="ActionPanel/ActionVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 42)
+theme_override_colors/font_color = Color(0.98, 0.86, 0.58, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_button_disabled")
+text = "Atacar"
+
+[node name="SpecialButton" type="Button" parent="ActionPanel/ActionVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 42)
+theme_override_colors/font_color = Color(0.98, 0.86, 0.58, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_button_disabled")
+text = "Especial"
+
+[node name="DefendButton" type="Button" parent="ActionPanel/ActionVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 42)
+theme_override_colors/font_color = Color(0.98, 0.86, 0.58, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_button_disabled")
+text = "Defender"
+
+[node name="WaitButton" type="Button" parent="ActionPanel/ActionVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 42)
+theme_override_colors/font_color = Color(0.98, 0.86, 0.58, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_button_disabled")
+text = "Esperar"
+
+[node name="TargetPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_left = 0.02
+anchor_top = 0.54
+anchor_right = 0.23
+anchor_bottom = 0.86
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dark_panel")
+
+[node name="TargetVBox" type="VBoxContainer" parent="TargetPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TargetTitle" type="Label" parent="TargetPanel/TargetVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.77, 0.42, 1)
+theme_override_font_sizes/font_size = 18
+text = "Objetivos"
+horizontal_alignment = 1
+
+[node name="UnitBanner" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -118.0
+offset_right = 260.0
+offset_bottom = -18.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dark_panel")
+
+[node name="BannerHBox" type="HBoxContainer" parent="UnitBanner"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="PortraitPanel" type="PanelContainer" parent="UnitBanner/BannerHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(68, 68)
+
+[node name="PortraitTexture" type="TextureRect" parent="UnitBanner/BannerHBox/PortraitPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PortraitLabel" type="Label" parent="UnitBanner/BannerHBox/PortraitPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BannerInfoVBox" type="VBoxContainer" parent="UnitBanner/BannerHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="BannerName" type="Label" parent="UnitBanner/BannerHBox/BannerInfoVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.77, 0.42, 1)
+theme_override_font_sizes/font_size = 20
+text = "Erick"
+
+[node name="BannerRole" type="Label" parent="UnitBanner/BannerHBox/BannerInfoVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Knight"
+
+[node name="BannerState" type="Label" parent="UnitBanner/BannerHBox/BannerInfoVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Mover"
+
+[node name="BannerStatsVBox" type="VBoxContainer" parent="UnitBanner/BannerHBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(250, 0)
+theme_override_constants/separation = 8
+
+[node name="BannerHpLabel" type="Label" parent="UnitBanner/BannerHBox/BannerStatsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "HP 12/12"
+
+[node name="BannerHpBar" type="ProgressBar" parent="UnitBanner/BannerHBox/BannerStatsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 18)
+max_value = 12.0
+value = 12.0
+show_percentage = false
+
+[node name="BannerStats" type="Label" parent="UnitBanner/BannerHBox/BannerStatsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "MOV 3  RANGO 1"
+
+[node name="ResultPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_left = 0.12
+anchor_top = 0.12
+anchor_right = 0.88
+anchor_bottom = 0.86
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_intro_panel")
+
+[node name="ResultVBox" type="VBoxContainer" parent="ResultPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ResultTitle" type="Label" parent="ResultPanel/ResultVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.78, 0.42, 1)
+theme_override_font_sizes/font_size = 30
+text = "Victoria"
+horizontal_alignment = 1
+
+[node name="ResultSummary" type="Label" parent="ResultPanel/ResultVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Cristal protegido"
+horizontal_alignment = 1
+
+[node name="ResultRows" type="VBoxContainer" parent="ResultPanel/ResultVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ResultHint" type="Label" parent="ResultPanel/ResultVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.82, 0.7, 1)
+theme_override_font_sizes/font_size = 16
+text = "Pulsa Esc para volver al menu."
+horizontal_alignment = 1
+
+[node name="ResultMainMenuButton" type="Button" parent="ResultPanel/ResultVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 46)
+theme_override_colors/font_color = Color(0.98, 0.86, 0.58, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_button_disabled")
+text = "Volver al menu principal"
+
+[node name="DialogBox" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = -218.0
+offset_right = -260.0
+offset_bottom = -34.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_intro_panel")
+
+[node name="DialogHBox" type="HBoxContainer" parent="DialogBox"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="DialogPortraitPanel" type="PanelContainer" parent="DialogBox/DialogHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(104, 104)
+
+[node name="DialogPortraitTexture" type="TextureRect" parent="DialogBox/DialogHBox/DialogPortraitPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DialogPortraitLabel" type="Label" parent="DialogBox/DialogHBox/DialogPortraitPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 44
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogVBox" type="VBoxContainer" parent="DialogBox/DialogHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Speaker" type="Label" parent="DialogBox/DialogHBox/DialogVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.78, 0.42, 1)
+theme_override_font_sizes/font_size = 22
+text = "Erick"
+
+[node name="DialogText" type="Label" parent="DialogBox/DialogHBox/DialogVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.96, 0.93, 0.86, 1)
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+text = "Texto"
+
+[node name="DialogButton" type="Button" parent="DialogBox/DialogHBox/DialogVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 44)
+theme_override_colors/font_color = Color(0.98, 0.86, 0.58, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_button_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_button_disabled")
+text = "Continuar"

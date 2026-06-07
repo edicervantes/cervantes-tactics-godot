@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="UnitStats" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/unit_stats.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/portraits/family/erick-avatar.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/standees/family/erick-standee.png" id="3"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Erick"
+role = "Knight"
+max_hp = 12
+move = 4
+attack = 3
+attack_range = 1
+heal = 0
+limit_charge_max = 3
+limit_damage_multiplier = 3
+hint = "espada de cristal"
+unit_color = Color(0.309804, 0.560784, 0.741176, 1)
+portrait_texture = ExtResource("2")
+standee_texture = ExtResource("3")
+standee_scale = 0.2

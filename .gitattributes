@@ -1,0 +1,17 @@
+* text=auto
+
+*.gd text eol=lf
+*.tscn text eol=lf
+*.tres text eol=lf
+*.godot text eol=lf
+*.md text eol=lf
+*.import text eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.svg text eol=lf
+*.glb binary
+*.docx binary
+*.pdf binary

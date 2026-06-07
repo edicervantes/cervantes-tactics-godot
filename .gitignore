@@ -1,0 +1,34 @@
+# Godot local/editor cache
+.godot/
+
+# Godot temporary/import output
+*.translation
+export_presets.cfg
+exports/builds/
+
+# macOS / Finder
+.DS_Store
+._*
+
+# Windows / Explorer
+Thumbs.db
+
+# Editor/runtime temp files
+*.tmp
+*.temp
+*.bak
+~$*
+scratch/
+
+# Logs and local captures
+*.log
+cervantes_battle_visual_capture.png
+
+# Private production material excluded from the public mirror
+exports/
+*.docx
+assets/soundtrack/
+assets/storyboard/
+data/storyboards/
+docs/HANDOFF_*.md
+docs/SESSION_MEMORY_*.md

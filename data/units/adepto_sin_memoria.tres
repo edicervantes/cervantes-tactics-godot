@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="UnitStats" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/unit_stats.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/portraits/rivals/adepto-sin-memoria-portrait.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/standees/rivals/adepto-sin-memoria-standee.png" id="3"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Adepto Sin Memoria"
+role = "Adept"
+max_hp = 5
+move = 3
+attack = 3
+attack_range = 2
+heal = 0
+hint = "cristal oscuro"
+unit_color = Color(0.423529, 0.352941, 0.52549, 1)
+portrait_texture = ExtResource("2")
+standee_texture = ExtResource("3")
+standee_scale = 0.19

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="UnitStats" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/unit_stats.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/portraits/family/mitzi-avatar.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/standees/family/mitzi-standee.png" id="3"]
+
+[resource]
+script = ExtResource("1")
+unit_name = "Mitzi"
+role = "Archer"
+max_hp = 8
+move = 4
+attack = 2
+attack_range = 3
+heal = 0
+trap_detection_radius = 2
+evasion_aura_radius = 2
+evasion_damage_reduction = 1
+hint = "arco preciso"
+unit_color = Color(0.960784, 0.945098, 0.909804, 1)
+portrait_texture = ExtResource("2")
+standee_texture = ExtResource("3")
+standee_scale = 0.2
