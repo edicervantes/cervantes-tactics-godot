@@ -38,4 +38,8 @@ Codex would be useful for:
 
 ## Suggested Form Text
 
-I am the primary maintainer of Cervantes Tactics, a public Godot 4 tactical RPG prototype with a playable Chapter I vertical slice, data-driven units, smoke tests, documented licensing, and a public roadmap. Codex would help me maintain the project by refactoring battle rules, improving tests, triaging issues, documenting architecture, and reviewing future contributions.
+Cervantes Tactics es un prototipo publico en Godot 4 que muestra como crear un RPG tactico mantenible con agentes: vertical slice jugable, arquitectura data-driven, smoke tests, roadmap, issues y licencias claras. Puede servir como referencia abierta para desarrolladores indie que quieren usar Codex en flujos reales de juego: refactor, QA, documentacion y mantenimiento continuo.
+
+## Notes On AI-Assisted Development
+
+Avoid describing the repository as "almost 100% vibe coded" in the application. A stronger framing is that it is human-directed and AI-assisted: the maintainer owns the creative direction, code review, licensing, publishing, and roadmap, while Codex is used as a development partner for implementation, refactoring, QA, documentation, and maintenance.
