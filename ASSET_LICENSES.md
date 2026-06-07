@@ -10,7 +10,7 @@ Source code, Godot scenes, Godot resources, shaders, and project configuration a
 
 Original Cervantes Tactics characters, logos, portraits, standees, writing, story concepts, generated concept art, and worldbuilding are included so the prototype can run and be reviewed.
 
-These original creative assets remain copyright Erick Cervantes and are not provided as general-purpose stock assets for reuse outside Cervantes Tactics without permission.
+These original creative assets are not provided as general-purpose stock assets for reuse outside Cervantes Tactics without permission. See `CONTENT_LICENSE.md` for the narrative, art, visual identity, and audio license terms.
 
 ## Third-Party Assets
 
@@ -45,4 +45,4 @@ Attribution is not required by CC0, but crediting FabinhoSC is encouraged.
 
 ## Not Included In This Public Mirror
 
-The working project may contain private canon documents, family pitch files, exported media packs, soundtrack files, and internal handoff notes. Those are intentionally excluded from this public repository until their public licensing and privacy status is decided.
+The working project may contain family pitch files, exported media packs, and internal handoff notes. Those are intentionally excluded from this public repository until their public licensing and privacy status is decided.

@@ -15,9 +15,9 @@ Cervantes Tactics is a Godot 4 tactical RPG prototype about protecting family me
 
 ## Open-Source Scope
 
-This repository is the public/open-source mirror of the working project. It intentionally excludes private production material such as canon documents, pitch decks, generated exports, soundtrack files, and internal handoff notes.
+This repository is the public/open-source mirror of the working project. It intentionally excludes private production material such as pitch decks, generated exports, and internal handoff notes.
 
-The code is open source under the MIT license. See `ASSET_LICENSES.md` for the asset licensing split.
+The code is open source under the MIT license. Story/canon content is public under CC BY-NC-ND 4.0. Original art/audio is protected for use only inside Cervantes Tactics. See `CONTENT_LICENSE.md` and `ASSET_LICENSES.md`.
 
 ## Requirements
 
@@ -85,4 +85,4 @@ This is an early prototype, but focused issues, bug reports, playtest notes, and
 
 ## License
 
-Code is licensed under MIT. Third-party assets retain their original licenses. Original Cervantes Tactics art, characters, writing, logos, and worldbuilding are not relicensed as general-purpose stock assets; see `ASSET_LICENSES.md`.
+Code is licensed under MIT. Story/canon content is licensed under CC BY-NC-ND 4.0. Original Cervantes Tactics art, logos, portraits, standees, music, audio, and visual identity are reserved for use only inside Cervantes Tactics. Third-party assets retain their original licenses. See `CONTENT_LICENSE.md` and `ASSET_LICENSES.md`.
