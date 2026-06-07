@@ -3,8 +3,8 @@
 ## Short Term
 
 - Keep Chapter I stable as the public vertical slice.
-- Add issue templates for bugs, playtest feedback, and small improvements.
-- Add screenshots and a short gameplay capture to the README.
+- Keep issue templates current for bugs, playtest feedback, and small improvements.
+- Add a short gameplay capture to the README.
 - Keep code and public assets separate from private production material.
 
 ## Gameplay

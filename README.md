@@ -2,6 +2,8 @@
 
 Cervantes Tactics is a Godot 4 tactical RPG prototype about protecting family memory from La Orden Sin Memoria. The public version focuses on the playable Chapter I vertical slice: a hybrid 3D diorama battlefield, turn-based tactics, data-driven units, save slots, UI smoke tests, and production notes for growing the project into a maintainable open-source game.
 
+![Chapter I concept map](assets/maps/chapter01/chapter01-map-art-concept.png)
+
 ## Current State
 
 - Godot 4.6 project with a playable desktop prototype.
@@ -71,6 +73,10 @@ godot --headless --path /path/to/cervantes-tactics-godot --scene res://scenes/Ba
 ## Roadmap
 
 See `docs/ROADMAP.md`.
+
+## Good First Issues
+
+See `docs/OPEN_SOURCE_TASKS.md` for small, focused tasks that would help the project and are friendly to new contributors.
 
 ## Contributing
 
